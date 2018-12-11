@@ -1,34 +1,36 @@
+# -!- coding: utf-8 -!-
+
 """
 https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/description/
-�����ظ��ַ�����Ӵ���
+《无重复字符的最长子串》
 
-����һ���ַ����������ҳ����в������ظ��ַ��� ��Ӵ� �ĳ��ȡ�
-ʾ�� 1:
-����: "abcabcbb"
-���: 3
-����: ��Ϊ���ظ��ַ�����Ӵ��� "abc"�������䳤��Ϊ 3��
+给定一个字符串，请你找出其中不含有重复字符的 最长子串 的长度。
+示例 1:
+输入: "abcabcbb"
+输出: 3
+解释: 因为无重复字符的最长子串是 "abc"，所以其长度为 3。
 
-ʾ�� 2:
-����: "bbbbb"
-���: 1
-����: ��Ϊ���ظ��ַ�����Ӵ��� "b"�������䳤��Ϊ 1��
+示例 2:
+输入: "bbbbb"
+输出: 1
+解释: 因为无重复字符的最长子串是 "b"，所以其长度为 1。
 
-ʾ�� 3:
-����: "pwwkew"
-���: 3
-����: ��Ϊ���ظ��ַ�����Ӵ��� "wke"�������䳤��Ϊ 3��
-     ��ע�⣬��Ĵ𰸱����� �Ӵ� �ĳ��ȣ�"pwke" ��һ�������У������Ӵ���
+示例 3:
+输入: "pwwkew"
+输出: 3
+解释: 因为无重复字符的最长子串是 "wke"，所以其长度为 3。
+     请注意，你的答案必须是 子串 的长度，"pwke" 是一个子序列，不是子串。
 """
 
 
 class Solution:
     def lengthOfLongestSubstring(self, s):
         """
-        0. ����ijΪ0��������ƶ�j
-        1. �����j��Ԫ����s[i:j]�е�λ��pos
-        2. λ��pos��Ϊ-1����iΪpos+1+i
-        3. �����Ը�����󳤶�
-        4. �ƶ�j�ظ�����1-3
+        0. 设置ij为0，向后逐步移动j
+        1. 计算第j个元素在s[i:j]中的位置pos
+        2. 位置pos不为-1更改i为pos+1+i
+        3. 否则尝试更新最大长度
+        4. 移动j重复步骤1-3
         :type s: str
         :rtype: int
         """

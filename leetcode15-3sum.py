@@ -1,12 +1,14 @@
+# -!- coding: utf-8 -!-
+
 """
 https://leetcode-cn.com/problems/3sum/description/
-¡¶ÈýÊýÖ®ºÍÎª0¡·
+ã€Šä¸‰æ•°ä¹‹å’Œä¸º0ã€‹
 
-¸ø¶¨Ò»¸ö°üº¬ n ¸öÕûÊýµÄÊý×é nums£¬ÅÐ¶Ï nums ÖÐÊÇ·ñ´æÔÚÈý¸öÔªËØ a£¬b£¬c £¬Ê¹µÃ a + b + c = 0 £¿ÕÒ³öËùÓÐÂú×ãÌõ¼þÇÒ²»ÖØ¸´µÄÈýÔª×é¡£
-×¢Òâ£º´ð°¸ÖÐ²»¿ÉÒÔ°üº¬ÖØ¸´µÄÈýÔª×é¡£
+ç»™å®šä¸€ä¸ªåŒ…å« n ä¸ªæ•´æ•°çš„æ•°ç»„ numsï¼Œåˆ¤æ–­ nums ä¸­æ˜¯å¦å­˜åœ¨ä¸‰ä¸ªå…ƒç´  aï¼Œbï¼Œc ï¼Œä½¿å¾— a + b + c = 0 ï¼Ÿæ‰¾å‡ºæ‰€æœ‰æ»¡è¶³æ¡ä»¶ä¸”ä¸é‡å¤çš„ä¸‰å…ƒç»„ã€‚
+æ³¨æ„ï¼šç­”æ¡ˆä¸­ä¸å¯ä»¥åŒ…å«é‡å¤çš„ä¸‰å…ƒç»„ã€‚
 
-ÀýÈç, ¸ø¶¨Êý×é nums = [-1, 0, 1, 2, -1, -4]£¬
-Âú×ãÒªÇóµÄÈýÔª×é¼¯ºÏÎª£º
+ä¾‹å¦‚, ç»™å®šæ•°ç»„ nums = [-1, 0, 1, 2, -1, -4]ï¼Œ
+æ»¡è¶³è¦æ±‚çš„ä¸‰å…ƒç»„é›†åˆä¸ºï¼š
 [
   [-1, 0, 1],
   [-1, -1, 2]
@@ -17,10 +19,10 @@ https://leetcode-cn.com/problems/3sum/description/
 class Solution:
     def threeSum(self, nums):
         """
-        1. ÅÅÐòÊý×é
-        2. ´Ó0¿ªÊ¼¹Ì¶¨Ò»¸öÊýÖµv
-        3. Ê¹ÓÃ(0-v)ÔÚÊ£ÓàµÄÊý×éÀï×ötwo-sumµÄ±Æ¼Ð
-        4. ¶ÔÓÚ±Æ¼Ð½á¹û½áºÏ¹Ì¶¨µÄÊýÖµ¼´Îª½á¹ûÁÐ±íµÄÒ»Ôª
+        1. æŽ’åºæ•°ç»„
+        2. ä»Ž0å¼€å§‹å›ºå®šä¸€ä¸ªæ•°å€¼v
+        3. ä½¿ç”¨(0-v)åœ¨å‰©ä½™çš„æ•°ç»„é‡Œåštwo-sumçš„é€¼å¤¹
+        4. å¯¹äºŽé€¼å¤¹ç»“æžœç»“åˆå›ºå®šçš„æ•°å€¼å³ä¸ºç»“æžœåˆ—è¡¨çš„ä¸€å…ƒ
         :type nums: List[int]
         :rtype: List[List[int]]
         """
@@ -28,14 +30,14 @@ class Solution:
         result = []
         i = 0
         while i < len(nums):
-            if nums[i] > 0:  # ¿ìËÙÌø³ö
+            if nums[i] > 0:  # å¿«é€Ÿè·³å‡º
                 break;
             target = -nums[i]
             m = i + 1
             n = len(nums) - 1
             if m >= n:
                 break
-            while True:  # ×ö±Æ¼Ð
+            while True:  # åšé€¼å¤¹
                 sum = nums[m] + nums[n]
                 if sum == target:
                     result.append([nums[i], nums[m], nums[n]])
@@ -51,7 +53,7 @@ class Solution:
                     n -= 1
                 else:
                     m += 1
-                if m >= n:  # ±Æ¼ÐÌø³öÌõ¼þ
+                if m >= n:  # é€¼å¤¹è·³å‡ºæ¡ä»¶
                     break
             ii = i + 1
             while ii < len(nums) and nums[ii] == nums[i]:
