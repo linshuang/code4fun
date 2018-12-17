@@ -23,6 +23,8 @@ https://leetcode-cn.com/problems/palindrome-number/
 class Solution:
     def isPalindrome(self, x):
         """
+        普通的整数翻转的想法，通过取余跟小数点操作来获得翻转后的数值。
+        加入了快速终止，跟0，负数，10倍数的边界处理
         :type x: int
         :rtype: bool
         """
@@ -34,12 +36,11 @@ class Solution:
         y = 0
         while True:
             tmp = z % 10
-            y = y * 10 + tmp
-            z = int(z / 10)
-            if y >= z:
+            y = y * 10 + tmp  # 翻转n位的数值
+            z = int(z / 10)  # 小数点进位
+            if y >= z:  # y>=z来快速终止，即此刻已经到达中位（非10倍数情况下）
                 break
-        print(y)
-        return z == y or z == int(y / 10)
+        return z == y or z == int(y / 10)  # 相等则为偶数位，等于1/10则为奇数位
 
 
 sol = Solution()

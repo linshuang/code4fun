@@ -27,6 +27,7 @@ class Solution:
 
     def reverse(self, x):
         """
+        循环对原数取余，小数点进位，结果小数点退位，从而获得翻转之后的证书
         :type x: int
         :rtype: int
         """
@@ -35,7 +36,7 @@ class Solution:
         x = abs(x)
         while x > 0:
             x1 = x % 10
-            y = y * 10 + x1
+            y = y * 10 + x1  # 结果小数点退位加上余数
             x = int(x / 10)
 
         if is_neg:

@@ -31,6 +31,7 @@ T     S     G
 class Solution(object):
     def convert(self, s, numRows):
         """
+        寻找并总结规律，获得输出的每位字符对应原字符串的位置
         :type s: str
         :type numRows: int
         :rtype: str
