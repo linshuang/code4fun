@@ -22,13 +22,15 @@
 - [最长回文子串 leetcode5](leetcode5-longest-palindromic-substring.py)
 【字符串】【回文】【扩散法】
 - [Z字形变换 leetcode6](leetcode6-zigzag-conversion.py)
-【Z字形】
+【Z字形】【规律总结】
 - [整数反转 leetcode7](leetcode7-reverse-integer.py)
 【取余】【小数点进/退位】
 - [字符串转换整数 leetcode8](leetcode8-string-to-integer-atoi.py)
 【小数点进位】【符号处理】
 - [回文数 leetcode9](leetcode9-palindrome-number.py)
 【取余】【小数点进/退位】【中位】
+- [盛最多水的容器 leetcode11](leetcode11-container-with-most-water.py)
+【双指针】
 
 - [多数之和： 钞票面值组合](others1-find-cash-comb.py)
 【数组】【递归】【组合】【排序】
