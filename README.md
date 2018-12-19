@@ -31,6 +31,10 @@
 【取余】【小数点进/退位】【中位】
 - [盛最多水的容器 leetcode11](leetcode11-container-with-most-water.py)
 【双指针】
+- [整数转罗马数字 leetcode12](leetcode12-integer-to-roman.py)
+【字符串】【映射】【找规律】
+- [罗马数字转整数 leetcode13](leetcode13-roman-to-integer.py)
+【字符串】【映射】【找规律】
 
 - [多数之和： 钞票面值组合](others1-find-cash-comb.py)
 【数组】【递归】【组合】【排序】
