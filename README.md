@@ -35,6 +35,8 @@
 【字符串】【映射】【找规律】
 - [罗马数字转整数 leetcode13](leetcode13-roman-to-integer.py)
 【字符串】【映射】【找规律】
+- [最长公共前缀 leetcode14](leetcode14-longest-common-prefix.py)
+【字符串】【指针】
 
 - [多数之和： 钞票面值组合](others1-find-cash-comb.py)
 【数组】【递归】【组合】【排序】
