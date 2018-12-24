@@ -37,6 +37,10 @@
 【字符串】【映射】【找规律】
 - [最长公共前缀 leetcode14](leetcode14-longest-common-prefix.py)
 【字符串】【指针】
+- [三数之和](leetcode16-3sum-closest.py)
+【两数之和】【逼夹】
+- [最接近的三数之和](leetcode16-3sum-closest.py)
+【三数之和】【两数之和】【逼夹】
 
 - [多数之和： 钞票面值组合](others1-find-cash-comb.py)
 【数组】【递归】【组合】【排序】
