@@ -25,6 +25,7 @@ class ListNode(object):
 class Solution(object):
     def removeNthFromEnd(self, head, n):
         """
+        双指针，一个慢点移动
         :type head: ListNode
         :type n: int
         :rtype: ListNode

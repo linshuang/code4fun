@@ -24,6 +24,7 @@ https://leetcode-cn.com/problems/4sum/
 class Solution:
     def fourSum(self, nums, target):
         """
+        在三数之和的外面再套一个循环
         :type nums: List[int]
         :type t: int
         :rtype: List[List[int]]

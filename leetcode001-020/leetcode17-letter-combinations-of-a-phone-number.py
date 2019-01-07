@@ -31,6 +31,7 @@ class Solution:
 
     def letterCombinations(self, digits):
         """
+        分治地进行：n个数字的组合等于对第一个数字和剩余数字的组合进行组合。
         :type digits: str
         :rtype: List[str]
         """
