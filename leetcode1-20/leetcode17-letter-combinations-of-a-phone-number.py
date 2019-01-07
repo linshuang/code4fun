@@ -13,7 +13,7 @@ https://leetcode-cn.com/problems/letter-combinations-of-a-phone-number/
 说明:
 尽管上面的答案是按字典序排列的，但是你可以任意选择答案输出的顺序。
 """
-
+from utils.list_equal import lequal
 
 class Solution:
     def __init__(self):
@@ -50,19 +50,8 @@ class Solution:
             new_combination =combination +l
             self.combine(digits, idx+1, new_combination, combinations)
 
-def list_equal(l1, l2):
-    if len(l1) != len(l2):
-        return False
-
-    for i in range(len(l1)):
-        i = l1[i]
-        idx = l2.index(i)
-        if idx == -1:
-            return False
-        l2.remove(i)
-    return True
 
 
 sol = Solution()
-assert (list_equal(sol.letterCombinations("23"), ["ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf"]))
-assert (list_equal(sol.letterCombinations("1111"), []))
+assert (lequal(sol.letterCombinations("23"), ["ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf"]))
+assert (lequal(sol.letterCombinations("1111"), []))
