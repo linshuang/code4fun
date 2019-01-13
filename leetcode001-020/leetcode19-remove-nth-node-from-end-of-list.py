@@ -14,12 +14,7 @@ https://leetcode-cn.com/problems/remove-nth-node-from-end-of-list/
 进阶：
 你能尝试使用一趟扫描实现吗？
 """
-
-
-class ListNode(object):
-    def __init__(self, x):
-        self.val = x
-        self.next = None
+from utils.list_utils import *
 
 
 class Solution(object):
@@ -48,26 +43,6 @@ class Solution(object):
             p2_prev.next=p2.next
             return head
 
-
-def create_link_list(num_list):
-    head = ListNode(num_list[0])
-    cur_node = head
-    for i in range(1, len(num_list)):
-        next_node = ListNode(num_list[i])
-        cur_node.next = next_node
-        cur_node = next_node
-
-    return head
-
-
-def print_link_list(head):
-    node = head
-    s = ''
-    while node is not None:
-        s+=str(node.val)
-        s+='->'
-        node = node.next
-    print(s)
 
 sol = Solution()
 # head = sol.removeNthFromEnd(create_link_list([1,2,3,4,5]), 2)
