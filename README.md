@@ -47,6 +47,8 @@
 【四数之和】【三数之和】【两数之和】【逼夹】
 - [删除链表的倒数第N个节点 leetcode19](leetcode001-020/leetcode19-remove-nth-node-from-end-of-list.py)
 【双指针】【链表删除】
+- [有效的括号 leetcode20](leetcode001-020/leetcode20-valid-parentheses.py)
+【栈】
 
 - [多数之和： 钞票面值组合](others/others1-find-cash-comb.py)
 【数组】【递归】【组合】【排序】
