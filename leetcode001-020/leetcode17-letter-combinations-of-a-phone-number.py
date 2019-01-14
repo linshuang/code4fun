@@ -13,7 +13,7 @@ https://leetcode-cn.com/problems/letter-combinations-of-a-phone-number/
 说明:
 尽管上面的答案是按字典序排列的，但是你可以任意选择答案输出的顺序。
 """
-from utils.list_equal import lequal
+from utils.list_utils import *
 
 class Solution:
     def __init__(self):
