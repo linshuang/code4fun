@@ -26,6 +26,14 @@ class ListNode(object):
         self.val = x
         self.next = None
 
+    def __str__(self):
+        p = self
+        s = ''
+        while p is not None:
+            s += (str(p.val)+'->')
+            p = p.next
+        return  s[0:-2] if len(s) > 0 else s
+
 def print_link_list(head):
     """
     打印链表，链表节点为ListNode
