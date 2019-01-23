@@ -82,28 +82,60 @@ class Solution(object):
             if median1 > median2:  # 取nums1的左侧，nums2的右侧
                 if len_nums2 % 2 == 0:  # 偏移偶数数组nums2的指针，从而子数组能够包含中间两位
                     med_idx2 -= 1
-                strip_len = min(len(nums1) - med_idx1-1,
+                strip_len = min(len(nums1) - med_idx1 - 1,
                                 med_idx2)  # 这里需要等额剥离相同长度。依据原理：从有序序列的首尾区域（不包含中值）内随机剥离等量的数值，最终的中位数不变
                 new_num1 = nums1[0:len(nums1) - strip_len]
                 new_num2 = nums2[-(len(nums2) - strip_len):]
             else:
                 if len_nums1 % 2 == 0:
                     med_idx1 -= 1
-                strip_len = min(len(nums2) -med_idx2-1, med_idx1)
+                strip_len = min(len(nums2) - med_idx2 - 1, med_idx1)
                 new_num2 = nums2[0:len(nums2) - strip_len]
                 new_num1 = nums1[-(len(nums1) - strip_len):]
             return self.findMedianSortedArrays(new_num1, new_num2)
 
 
+class Solution(object):
+    def findMedianSortedArrays(self, nums1, nums2):
+        """
+        先进行归并排序，然后直接取中位数
+        :param nums1:
+        :param nums2:
+        :return:
+        """
+        nums = []
+        i = j = 0
+        while i < len(nums1):
+            n1 = nums1[i]
+            while j < len(nums2):
+                n2 = nums2[j]
+                if n2 < n1:
+                    nums.append(n2)
+                    j += 1
+                else:
+                    break
+            nums.append(n1)
+            i += 1
+        if j < len(nums2):
+            nums.extend(nums2[j:])
+
+        len_nums = len(nums)
+        if len_nums % 2 == 1:
+            return nums[(len_nums - 1) // 2]
+        else:
+            return float(nums[len_nums // 2 - 1] + nums[len_nums // 2]) / 2
+
+
 sol = Solution()
 
-assert (sol.findMedianSortedArrays([1, 2], [3, 4, 5])==3)  # 3
-assert(sol.findMedianSortedArrays([1, 3, 5, 7, 9], [2, 4, 6])==4.5)  # 4.5
-assert(sol.findMedianSortedArrays([1, 3, 3, 3, 5], [2, 4, 6])== 3)  # 3
-assert(sol.findMedianSortedArrays([1, 3, 5, 8, 9, 10, 12, 13], [2])==8)  # 8
-assert(sol.findMedianSortedArrays([1, 3, 5, 8, 9, 10, 12, 13], [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2])==2)
+assert (sol.findMedianSortedArrays([1, 2], [3, 4]) == 2.5)  # 3
+assert (sol.findMedianSortedArrays([1, 2], [3, 4, 5]) == 3)  # 3
+assert (sol.findMedianSortedArrays([1, 3, 5, 7, 9], [2, 4, 6]) == 4.5)  # 4.5
+assert (sol.findMedianSortedArrays([1, 3, 3, 3, 5], [2, 4, 6]) == 3)  # 3
+assert (sol.findMedianSortedArrays([1, 3, 5, 8, 9, 10, 12, 13], [2]) == 8)  # 8
+assert (sol.findMedianSortedArrays([1, 3, 5, 8, 9, 10, 12, 13], [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]) == 2)
 assert (sol.findMedianSortedArrays([], [1, 2, 3, 4]) == 2.5)
-assert(sol.findMedianSortedArrays([1, 2], [3, 4])==2.5)  # 2.5
-assert(sol.findMedianSortedArrays([1, 1,1,1], [3, 3,3,3])== 2)  # 2
-assert(sol.findMedianSortedArrays([1, 1,3,3], [1, 1,3,3])== 2)  # 2
+assert (sol.findMedianSortedArrays([1, 2], [3, 4]) == 2.5)  # 2.5
+assert (sol.findMedianSortedArrays([1, 1, 1, 1], [3, 3, 3, 3]) == 2)  # 2
+assert (sol.findMedianSortedArrays([1, 1, 3, 3], [1, 1, 3, 3]) == 2)  # 2
 assert (sol.findMedianSortedArrays([4, 5, 6, 8], [1, 2, 3, 7, 9, 10]) == 5.5)  # 2
