@@ -1,4 +1,3 @@
-
 def lequal(l1, l2):
     """
     python内建list的相等
@@ -22,17 +21,24 @@ class ListNode(object):
     """
     链表的节点
     """
+
     def __init__(self, x):
         self.val = x
         self.next = None
 
     def __str__(self):
+        s = 'val: ' + str(self.val) + ', linked-list: '
+        sett = set()  # 防止环
         p = self
-        s = ''
         while p is not None:
-            s += (str(p.val)+'->')
+            if p in sett:
+                break
+            else:
+                sett.add(p)
+            s += (str(p.val) + '->')
             p = p.next
-        return  s[0:-2] if len(s) > 0 else s
+        return s[0:-2] if len(s) > 0 else s
+
 
 def print_link_list(head):
     """
@@ -43,8 +49,8 @@ def print_link_list(head):
     node = head
     s = ''
     while node is not None:
-        s+=str(node.val)
-        s+='->'
+        s += str(node.val)
+        s += '->'
         node = node.next
     print(s)
 
